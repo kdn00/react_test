@@ -43,3 +43,8 @@ static getDerivedStateFromProps(props, state){
     return {};
 }
 ```
+
+## componentDidMount()
+- 작성한 함수들 중 가장 마지막으로 실행된다.
+- render() 함수가 return되는 html 형식의 코드를 화면에 그려준 후 실행한다.
+- 화면이 모두 그려진 후에 실행돼야하는 이벤트 처리, 초기화 등에 가장 많이 활용된다.
