@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import TestComponent from './Components/TestComponent';
-import ES6 from './Components/ES6';
-import Variable from './Components/Variable';
-import SpreadOperator from './Components/SpreadOperator';
-import ClassPrototype from './Components/ClassPrototype';
-import ArrowFunction from './Components/ArrowFunction';
-import ForEach from './Components/ForEach';
+import TestComponent from './1장_Components/TestComponent';
+import ES6 from './1장_Components/ES6';
+import Variable from './1장_Components/Variable';
+import SpreadOperator from './1장_Components/SpreadOperator';
+import ClassPrototype from './1장_Components/ClassPrototype';
+import ArrowFunction from './1장_Components/ArrowFunction';
+import ForEach from './1장_Components/ForEach';
 
 function App() {
   return (
