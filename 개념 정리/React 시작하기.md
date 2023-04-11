@@ -9,8 +9,9 @@
 
 # 생명주기
 - component의 생성, 변경, 소멸과정을 뜻한다.
-- ``render()``, ``constructor()``, ``getDerivedStateFormProps()``, ``componentDidMount()`` 함수들은 component의 **생성** 과정에 속한다.
 
+# 생명주기_생성
+- ``render()``, ``constructor()``, ``getDerivedStateFormProps()``, ``componentDidMount()`` 함수들은 component의 **생성** 과정에 속한다.
 ## render()
 - return되는 html형식의 코드를 화면에 그려주는 함수
 - 화면 내용이 변경돼야 할 시점에 자동으로 호출된다.
@@ -41,10 +42,19 @@ function App() {
 static getDerivedStateFromProps(props, state){
     console.log('2. getDerivedStateFromProps Call : '+ props.prop_value);
     return {};
-}
+}d
 ```
 
 ## componentDidMount()
-- 작성한 함수들 중 가장 마지막으로 실행된다.
+- 생성 단계의 함수들 중 가장 마지막으로 실행된다.
 - render() 함수가 return되는 html 형식의 코드를 화면에 그려준 후 실행한다.
 - 화면이 모두 그려진 후에 실행돼야하는 이벤트 처리, 초기화 등에 가장 많이 활용된다.
+
+# 생명주기_변경
+- 변경이란, props나 state의 변경을 말한다.
+
+## shouldComponentUpdate()
+- shouldComponentUpdate() 함수는 component의 **변경** 과정에 속한다.
+- return 값이 true일 경우에 render() 함수를 한 번 더 호출한다.
+- state 변경이 발생하면 변경 단계의 생명주기 함수 shouldComponentUpdate()를 호출한다.
+
