@@ -42,7 +42,7 @@ function App() {
 static getDerivedStateFromProps(props, state){
     console.log('2. getDerivedStateFromProps Call : '+ props.prop_value);
     return {};
-}d
+}
 ```
 
 ## componentDidMount()
@@ -106,7 +106,7 @@ console.log('includes : ' + LongString.includes("추가된 String"));
 ```javascript
 let letName = 'react';
 console.log('letName1 : ' + letName);
-// let letName = '200'; --> 에러 발생
+// let letName = '200'; --> 재선언 에러 발생
 letName = 'react200';
 console.log('letName2 : ' + letName);
 ```
@@ -121,3 +121,47 @@ console.log('constName : ' + constName);
 // const constName = '200'; --> 재선언 에러
 // constName = 'react200'; --> 재할당 에러
 ```
+
+# 전개 연산자(SpreadOperator 파일과 함께 보기)
+- 배열이나 객체 변수를 좀 더 직관적이고 편리하게 합치거나 추출할 수 있게 도와주는 문법이다.
+- 변수 앞에 ...(마침표 3개)를 입력해 사용한다.
+
+## 배열을 합칠 때 전개 연산자 사용
+- 기존 ES5에서 배열 2개를 합치기 위해서는 배열 각각의 인덱스로 접근해 값을 가져오거나, concat 함수를 사용한다.   
+예시 : `var sumVarArr = [].concat(varArray1, varArray2);`   
+
+- ES6에서는 전개 연산자 ...(마침표 3개)를 배열명 앞에 붙여 여러 개의 배열을 합칠 수 있다.
+```javascript
+// 전개 연산자 사용법
+let sumLetArr = [...varArray1, ...varArray2];
+console.log('2. sumLetArr : ' + sumLetArr);
+const [sum1, sum2, ...remain] = sumLetArr;
+console.log('3. sum1 : ' + sum1 + ', sum2 : ' + sum2 + ', remain : ' + remain);
+```
+
+## 객체를 합칠 때 전개 연산자 사용
+- 기존 ES5에서 객체 2개를 합치기 위해서는 Object.assign() 함수를 이용해야 한다. 첫번째 인자 {}는 함수의 return값이고, 뒤의 인자에 객체들을 ,(콤마)로 연결해 나열하면 여러 개의 객체를 합칠 수 있다.
+```javascript
+// js Object
+var sumVarObj = Object.assign({}, varObj1, varObj2);
+console.log('4. sumVarObj : ' + JSON.stringify(sumVarObj));
+```
+
+- ES6에서는 ...(전개 연산자)를 객체명 앞에 붙여 여러 개의 객체를 합칠 수 있다.
+```javascript
+// ES6 Object
+var sumLetObj = { ...varObj1, ...varObj2 };
+console.log('5. sumLetObj : ' + JSON.stringify(sumLetObj));
+
+// 객체의 키와 값을 추출해 키와 동일한 명칭의 개별 변수에 넣는다. 나머지는 마지막에 전개 연산자 처리된 ...others 변수에 넣는다.
+var {key1, key3, ...others} = sumLetObj;
+console.log('6. key1 : ' + key1 + ', key3 : ' + key3 + ', others : ' + JSON.stringify(others));
+```
+
+### JSON.stringify(value[, replacer[, space]]) 란?
+[설명 참고](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
+- JS의 값이나 객체를 JSON 문자열로 변환한다.
+- 선택적으로, `replacer`를 함수로 전달할 경우 변환 전 값을 변형할 수 있고, 배열로 전달할 경우 지정한 속성만 결과에 포함합니다.   
+
+- `value(필수)` : JSON문자열로 변환할 값이다.
+- `replacer(선택)` : 함수 또는 배열이 될 수 있다. 이 값이 null이거나 제공되지 않으면, 객체의 모든 속성들이 JSON 문자열 결과에 포함된다.
