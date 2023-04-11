@@ -7,7 +7,7 @@
 - 특정 코드 뭉치를 다른 부분에 이식하거나, 재사용하기 위해 사용하는 코드 블록 단위
 - component를 파일 단위로 작성한 후, 필요한 위치에서 임포트해 사용할 수 있다.
 
-# 생명주기(TestComponent.js 파일과 함께 보기)
+# 생명주기(TestComponent.js 파일과 함께 보기)[https://github.com/kdn00/react_test/blob/main/src/Components/TestComponent.js]
 - component의 생성, 변경, 소멸과정을 뜻한다.
 
 # 생명주기_생성
@@ -60,7 +60,7 @@ static getDerivedStateFromProps(props, state){
 
 ---
 
-# 템플릿 문자열 사용하기
+# 템플릿 문자열 사용하기(ES6.js 파일과 함께 보기)[https://github.com/kdn00/react_test/blob/main/src/Components/ES6.js]
 - ES(ECMA 스크립트)는 표준화된 스크립트 언어이고, ES 뒤에 붙은 숫자는 버전을 의미한다.
 - 2011년부터 사용된 ES5가 웹 표준처럼 사용되고 있고, 2015년에 발행된 ES6는 많은 유용한 기능이 추가됐고 JS는 이 기술 규격을 따른다.
 - react도 JS 기반의 언어이기 때문에 ES6의 모든 기능을 사용할 수 있다.
@@ -90,7 +90,7 @@ console.log('includes : ' + LongString.includes("추가된 String"));
 
 ---
 
-# 변수(Variable 파일과 함께 보기)
+# 변수(Variable.js 파일과 함께 보기)[https://github.com/kdn00/react_test/blob/main/src/Components/Variable.js]
 - 데이터(data)를 저장하기 위해 프로그램에 의해 이름을 할당받은 메모리 공간을 의미합니다.
 - 즉, 변수란 데이터(data)를 저장할 수 있는 메모리 공간을 의미하며, 이렇게 저장된 값은 변경될 수 있습니다.
 
@@ -122,7 +122,7 @@ console.log('constName : ' + constName);
 // constName = 'react200'; --> 재할당 에러
 ```
 
-# 전개 연산자(SpreadOperator 파일과 함께 보기)
+# 전개 연산자(SpreadOperator.js 파일과 함께 보기)[https://github.com/kdn00/react_test/blob/main/src/Components/SpreadOperator.js]
 - 배열이나 객체 변수를 좀 더 직관적이고 편리하게 합치거나 추출할 수 있게 도와주는 문법이다.
 - 변수 앞에 ...(마침표 3개)를 입력해 사용한다.
 
@@ -158,10 +158,63 @@ var {key1, key3, ...others} = sumLetObj;
 console.log('6. key1 : ' + key1 + ', key3 : ' + key3 + ', others : ' + JSON.stringify(others));
 ```
 
-### JSON.stringify(value[, replacer[, space]]) 란?
+### ※ JSON.stringify(value[, replacer[, space]]) 란?
 [설명 참고](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
 - JS의 값이나 객체를 JSON 문자열로 변환한다.
 - 선택적으로, `replacer`를 함수로 전달할 경우 변환 전 값을 변형할 수 있고, 배열로 전달할 경우 지정한 속성만 결과에 포함합니다.   
 
 - `value(필수)` : JSON문자열로 변환할 값이다.
 - `replacer(선택)` : 함수 또는 배열이 될 수 있다. 이 값이 null이거나 제공되지 않으면, 객체의 모든 속성들이 JSON 문자열 결과에 포함된다.
+
+# Class(ClassPrototype.js 파일과 함께 보기)
+- 기존 ES5 JS에서는 객체를 구현하기 위해 prototype을 사용한다.
+- 객체는 상속을 통해 코드를 재사용할 수 있게 해준다.
+- ES6에서 등장한 class는 prototype과 같은 개념인데, 쉽게 읽고 표현하기 위해 고안된 문법이다.
+
+#### ※ JS에서는 함수를 객체로 사용할 수 있다.
+
+## prototype
+- `생성자 함수명.prototype.함수명` 형태로 선언해주면, 객체 외부에서 함수(cnt.showNum();)를 실행해 객체 내부에 선언된 함수로 사용할 수 있다.
+- 함수가 실행되면, 생성자 함수에서 '200'으로 할당된 객체 변수 number를 사용한다.
+```javascript
+// ES5 prototype : ES5에서는 객체를 prototype으로 선언한다.
+let ExamCountFunc = (function() {
+  // 생성자 함수를 실행하는데, 파라미터로 전달받은 num 변수의 값(200)을 객체 변수 number에 저장한다.
+  function ExamCount(num) {
+    this.number = num;
+    }
+
+    ExamCount.prototype.showNum = function() { // 생성자 함수명.prototype.함수명 형태
+      console.log('1. react_' + this.number);
+      };
+
+      return ExamCount;
+  } ());
+  
+// ExamCountFunc() 함수(객체)를 실행한 후, return이 되는 결과값을 cnt 변수에 저장한다.
+let cnt = new ExamCountFunc('200');
+  // 객체 안에 선언된 showNum() 함수를 실행한다.
+  cnt.showNum();
+```
+
+## class
+- ES6에서는 객체를 class로 선언한다.
+```javascript
+// ES6 class : ES6에서는 객체를 class로 선언한다.
+class ExamCountClass {
+  // constructor()라는 생성자 함수가 실행되고 파라미터로 전달받은 num2라는 변숫값(2hundred)을 객체 변수 number2에 저장한다.
+  constructor(num2){
+    this.number2 = num2;
+    }
+    
+    showNum(){
+      console.log(`2. react_${this.number2}`);
+      }
+}
+
+let cnt2 = new ExamCountClass('2hundred');
+cnt2.showNum();
+```
+- constructor()라는 생성자 함수가 실행되고 파라미터로 전달받은 num2라는 변숫값 (2hundred)을 객체 변수 number2에 저장한다.
+- 객체에 접근할 때 실행할 함수(showNum)는 class의 {} 괄호(scope) 안에 간단하게 선언할 수 있다.
+- 함수가 실행되면, 생성자 함수에서 '2hundred'로 할당된 객체 변수 number2를 사용한다.
