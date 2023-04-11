@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class R003 extends Component{
+class TestComponent extends Component{
     // getDerivedStateFormProps(props, state) 함수는 constructor() 함수 다음으로 실행된다.
     static getDerivedStateFromProps(props, state){
         console.log('2. getDerivedStateFromProps Call : '+ props.prop_value);
@@ -37,4 +37,4 @@ class R003 extends Component{
     }
 }
 
-export default R003;
+export default TestComponent;
