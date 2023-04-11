@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import TestComponent from './Components/TestComponent';
 import ES6 from './Components/ES6';
+import Variable from './Components/Variable';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <p>css 적용하기</p>
       <TestComponent prop_value = 'FromApp.js' />
       <ES6 />
+      <Variable />
     </div>
     </>
   );

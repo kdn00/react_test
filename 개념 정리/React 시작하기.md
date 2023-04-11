@@ -11,7 +11,7 @@
 - component의 생성, 변경, 소멸과정을 뜻한다.
 
 # 생명주기_생성
-- ``render()``, ``constructor()``, ``getDerivedStateFormProps()``, ``componentDidMount()`` 함수들은 component의 **생성** 과정에 속한다.
+- `render()`, `constructor()`, `getDerivedStateFormProps()`, `componentDidMount()` 함수들은 component의 **생성** 과정에 속한다.
 ## render()
 - return되는 html형식의 코드를 화면에 그려주는 함수
 - 화면 내용이 변경돼야 할 시점에 자동으로 호출된다.
@@ -84,6 +84,40 @@ let LongString = "ES6에 추가된 String 함수들입니다.";
 console.log('startsWith : ' + LongString.startsWith("ES6에 추가"));
 console.log('endsWith : ' + LongString.endsWith("함수들입니다."));
 console.log('includes : ' + LongString.includes("추가된 String"));
+// 콘솔 로그는 아래 이미지에서 확인
 ```
 ![image](https://user-images.githubusercontent.com/89984853/231040027-13477ddc-cc26-47f7-859d-74bcdc8705cf.png)
 
+---
+
+# 변수(Variable 파일과 함께 보기)
+- 데이터(data)를 저장하기 위해 프로그램에 의해 이름을 할당받은 메모리 공간을 의미합니다.
+- 즉, 변수란 데이터(data)를 저장할 수 있는 메모리 공간을 의미하며, 이렇게 저장된 값은 변경될 수 있습니다.
+
+## react(JS)의 변수 종류
+- ES5에서는 var, ES6에는 let, const가 추가로 있다.
+### var
+- 이미 선언한 var 변수를 다시 선언했을 때는 `'varName' is already defined no-redeclare`라는 경고 메시지가 콘솔 로그에 출력된다.
+- 하지만 var 변수는 재선언, 재할당을 허용하기 때문에 경고 메시지가 출력돼도 페이지가 정상적으로 표시된다.
+
+### let
+- 이미 선언한 let 변수를 다시 선언했을 때는 ` Parsing error: Identifier 'letName' has already been declared. (18:12)`라는 경고 메시지가 콘솔 로그에 출력된다.
+- let 변수는 재선언을 허용하지 않기 때문에 에러 페이지가 표시된다.
+```javascript
+let letName = 'react';
+console.log('letName1 : ' + letName);
+// let letName = '200'; --> 에러 발생
+letName = 'react200';
+console.log('letName2 : ' + letName);
+```
+- 재선언은 허용하지 않지만, 재할당은 허용한다.
+
+### const
+- 이미 선언한 const 변수의 constName을 다시 선언했을 때 `Parsing error: Identifier 'constName' has already been declared. (24:14)`라는 에러 메시지가 콘솔 로그에 출력된다.
+- const 변수는 재할당을 허용하지 않기 때문에 새로운 값을 할당하면 `Uncaught TypeError: Assignment to constant variable.`라는 에러 코드와, 에러 페이지가 표시된다.
+```javascript
+const constName = 'react';
+console.log('constName : ' + constName);
+// const constName = '200'; --> 재선언 에러
+// constName = 'react200'; --> 재할당 에러
+```
