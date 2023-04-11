@@ -6,6 +6,7 @@ import Variable from './Components/Variable';
 import SpreadOperator from './Components/SpreadOperator';
 import ClassPrototype from './Components/ClassPrototype';
 import ArrowFunction from './Components/ArrowFunction';
+import ForEach from './Components/ForEach';
 
 function App() {
   return (
@@ -19,8 +20,10 @@ function App() {
       <Variable /> 
       <SpreadOperator />
       <ClassPrototype />
-      */}
       <ArrowFunction />
+      */}
+      <ForEach />
+      
     </div>
     </>
   );

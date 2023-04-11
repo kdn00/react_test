@@ -274,3 +274,29 @@ Function5 = (num1, num2, num3) => {
     }, 100);
 }
 ```
+
+## forEach() 함수
+[ForEach.js 파일과 함께 보기](https://github.com/kdn00/react_test/blob/main/src/Components/ForEach.js)
+- 배열 함수 forEach()는 for문에서 사용하던 순번과 배열의 크기 변수를 사용하지 않는다.
+- 배열의 처음부터 마지막 순번까지 모두 작업하는 경우 forEach()문을 사용하는 것이 간편하다.
+- 하지만 특정 순번에서만 배열 값을 사용하거나, 변경해야 하는 상황이라면 for문을 사용해야 한다.
+```javascript
+// for문 사용
+let For_Arr = [3, 2, 8, 8];
+let For_newArr = [];
+for(let i = 0; i< For_Arr.length; i++){
+  For_newArr.push(For_Arr[i]);
+}
+```
+
+- forEach() 함수에서는 순번과 배열의 크기 정보를 사용하지 않는다.
+- 0부터 배열의 크기만큼 반복하며 순서대로 배열 값을 반환한다.
+```javascript
+// forEach() 함수 사용
+let ForEach_Arr = [3, 3, 9, 8];
+let ForEach_newArr = [];
+// 반복문이 실행될 때마다 콜백 함수로 결괏값을 받아 새로운 함수에 넣는다.
+ForEach_Arr.forEach((result) => {
+  ForEach_newArr.push(result);
+  })
+```
