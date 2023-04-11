@@ -8,7 +8,7 @@
 - component를 파일 단위로 작성한 후, 필요한 위치에서 임포트해 사용할 수 있다.
 
 # 생명주기
-(TestComponent.js 파일과 함께 보기)[https://github.com/kdn00/react_test/blob/main/src/Components/TestComponent.js]
+[TestComponent.js 파일과 함께 보기](https://github.com/kdn00/react_test/blob/main/src/Components/TestComponent.js)
 - component의 생성, 변경, 소멸과정을 뜻한다.
 
 # 생명주기_생성
@@ -62,7 +62,7 @@ static getDerivedStateFromProps(props, state){
 ---
 
 # 템플릿 문자열 사용하기
-(ES6.js 파일과 함께 보기)[https://github.com/kdn00/react_test/blob/main/src/Components/ES6.js]
+[ES6.js 파일과 함께 보기](https://github.com/kdn00/react_test/blob/main/src/Components/ES6.js)
 - ES(ECMA 스크립트)는 표준화된 스크립트 언어이고, ES 뒤에 붙은 숫자는 버전을 의미한다.
 - 2011년부터 사용된 ES5가 웹 표준처럼 사용되고 있고, 2015년에 발행된 ES6는 많은 유용한 기능이 추가됐고 JS는 이 기술 규격을 따른다.
 - react도 JS 기반의 언어이기 때문에 ES6의 모든 기능을 사용할 수 있다.
@@ -93,7 +93,7 @@ console.log('includes : ' + LongString.includes("추가된 String"));
 ---
 
 # 변수
-(Variable.js 파일과 함께 보기)[https://github.com/kdn00/react_test/blob/main/src/Components/Variable.js]
+[Variable.js 파일과 함께 보기](https://github.com/kdn00/react_test/blob/main/src/Components/Variable.js)
 - 데이터(data)를 저장하기 위해 프로그램에 의해 이름을 할당받은 메모리 공간을 의미합니다.
 - 즉, 변수란 데이터(data)를 저장할 수 있는 메모리 공간을 의미하며, 이렇게 저장된 값은 변경될 수 있습니다.
 
@@ -126,7 +126,7 @@ console.log('constName : ' + constName);
 ```
 
 # 전개 연산자
-(SpreadOperator.js 파일과 함께 보기)[https://github.com/kdn00/react_test/blob/main/src/Components/SpreadOperator.js]
+[SpreadOperator.js 파일과 함께 보기](https://github.com/kdn00/react_test/blob/main/src/Components/SpreadOperator.js)
 - 배열이나 객체 변수를 좀 더 직관적이고 편리하게 합치거나 추출할 수 있게 도와주는 문법이다.
 - 변수 앞에 ...(마침표 3개)를 입력해 사용한다.
 
@@ -171,7 +171,7 @@ console.log('6. key1 : ' + key1 + ', key3 : ' + key3 + ', others : ' + JSON.stri
 - `replacer(선택)` : 함수 또는 배열이 될 수 있다. 이 값이 null이거나 제공되지 않으면, 객체의 모든 속성들이 JSON 문자열 결과에 포함된다.
 
 # Class
-(ClassPrototype.js 파일과 함께 보기)[https://github.com/kdn00/react_test/blob/main/src/Components/ClassPrototype.js]
+[ClassPrototype.js 파일과 함께 보기](https://github.com/kdn00/react_test/blob/main/src/Components/ClassPrototype.js)
 - 기존 ES5 JS에서는 객체를 구현하기 위해 prototype을 사용한다.
 - 객체는 상속을 통해 코드를 재사용할 수 있게 해준다.
 - ES6에서 등장한 class는 prototype과 같은 개념인데, 쉽게 읽고 표현하기 위해 고안된 문법이다.
