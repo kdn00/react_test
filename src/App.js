@@ -7,6 +7,7 @@ import SpreadOperator from './1장_Components/SpreadOperator';
 import ClassPrototype from './1장_Components/ClassPrototype';
 import ArrowFunction from './1장_Components/ArrowFunction';
 import ForEach from './1장_Components/ForEach';
+import Map from './1장_Components/Map';
 
 function App() {
   return (
@@ -21,8 +22,9 @@ function App() {
       <SpreadOperator />
       <ClassPrototype />
       <ArrowFunction />
-      */}
       <ForEach />
+      */}
+      <Map />
       
     </div>
     </>

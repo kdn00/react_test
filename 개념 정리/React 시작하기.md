@@ -231,6 +231,9 @@ cnt2.showNum();
 ---
 
 # 함수
+### ※ CallBack(콜백) 함수
+- 프로그래밍에서 콜백(callback) 또는 콜백 함수(callback function)는 다른 코드의 인수로서 넘겨주는 실행 가능한 코드를 말한다.
+- 콜백을 넘겨받는 코드는 이 콜백을 필요에 따라 즉시 실행할 수도 있고, 아니면 나중에 실행할 수도 있다.
 
 ## 화살표 함수
 [ArrowFunction.js 파일과 함께 보기](https://github.com/kdn00/react_test/blob/main/src/1장_Components/ArrowFunction.js)
@@ -300,3 +303,25 @@ ForEach_Arr.forEach((result) => {
   ForEach_newArr.push(result);
 })
 ```
+
+## map() 함수
+[Map.js 파일과 함께 보기](https://github.com/kdn00/react_test/blob/main/src/1장_Components/Map.js)
+
+- forEach()와 마찬가지로 for문에서 사용하던 순번과 배열의 크기 변수를 사용하지 않는다.
+- 차이점은 map()은 forEach()와 달리 return을 사용해 반환 값을 받을 수 있다는 것이다.
+#### ※ 화살표 함수는 return 구문을 생략할 수 있다.
+
+- 기존 배열에서 map()함수를 사용해 순서대로 하나씩 요소에 접근해 가져온다.
+- 이 때마다 콜백 함수가 실행된다.
+```javascript
+let Map_Arr = [3, 2, 8, 8];
+let Map_newArr = Map_Arr.map(x => x);
+console.log(`1. Map_newArr : [${Map_newArr}]`);
+```
+
+```javascript
+// 기존 배열의 요소에 순서대로 접근한 후, 각각 2를 곱해 새로운 배열에 저장
+let Map_mulitiArr = Map_Arr.map(x => x*2);
+console.log(`2. Map_mulitiArr : [${Map_mulitiArr}]`);
+```
+
