@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+
 
 class ClassPrototype extends Component {
     constructor(props){
