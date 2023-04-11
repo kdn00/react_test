@@ -325,3 +325,11 @@ let Map_mulitiArr = Map_Arr.map(x => x*2);
 console.log(`2. Map_mulitiArr : [${Map_mulitiArr}]`);
 ```
 
+# jquery(라이브러리)
+[Jquery.js 파일과 함께 보기](https://github.com/kdn00/react_test/blob/main/src/1장_Components/Jquery.js)
+- jquery는 가장 인기 있는 JS 라이브러리다.
+- 이벤트 처리, 애니메이션 등 JS의 기능을 간단하고 빠르게 구현할 수 있도록 지원한다.
+
+### jquery 사용법
+- cmd창에 client 폴더(혹은 src 홀더) 경로를 지정한 후, `npm install jquery`를 입력하여 설치한다.
+- `import $ from 'jquery';`로 파일을 임포트해 사용한다.

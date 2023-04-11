@@ -8,6 +8,7 @@ import ClassPrototype from './1장_Components/ClassPrototype';
 import ArrowFunction from './1장_Components/ArrowFunction';
 import ForEach from './1장_Components/ForEach';
 import Map from './1장_Components/Map';
+import Jquery from './1장_Components/Jquery';
 
 function App() {
   return (
@@ -23,9 +24,10 @@ function App() {
       <ClassPrototype />
       <ArrowFunction />
       <ForEach />
-      */}
       <Map />
-      
+      */}
+      <Jquery />
+
     </div>
     </>
   );
