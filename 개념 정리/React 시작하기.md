@@ -7,7 +7,7 @@
 - 특정 코드 뭉치를 다른 부분에 이식하거나, 재사용하기 위해 사용하는 코드 블록 단위
 - component를 파일 단위로 작성한 후, 필요한 위치에서 임포트해 사용할 수 있다.
 
-# 생명주기
+# 생명주기(TestComponent.js 파일과 함께 보기)
 - component의 생성, 변경, 소멸과정을 뜻한다.
 
 # 생명주기_생성
@@ -38,7 +38,7 @@ function App() {
     </>
   );
 }
-// R003.js
+// TestComponent.js
 static getDerivedStateFromProps(props, state){
     console.log('2. getDerivedStateFromProps Call : '+ props.prop_value);
     return {};
@@ -57,4 +57,32 @@ static getDerivedStateFromProps(props, state){
 - shouldComponentUpdate() 함수는 component의 **변경** 과정에 속한다.
 - return 값이 true일 경우에 render() 함수를 한 번 더 호출한다.
 - state 변경이 발생하면 변경 단계의 생명주기 함수 shouldComponentUpdate()를 호출한다.
+
+---
+
+# 템플릿 문자열 사용하기
+- ES(ECMA 스크립트)는 표준화된 스크립트 언어이고, ES 뒤에 붙은 숫자는 버전을 의미한다.
+- 2011년부터 사용된 ES5가 웹 표준처럼 사용되고 있고, 2015년에 발행된 ES6는 많은 유용한 기능이 추가됐고 JS는 이 기술 규격을 따른다.
+- react도 JS 기반의 언어이기 때문에 ES6의 모든 기능을 사용할 수 있다.
+   
+- 문자열과 변수를 합치기 위해서는 문자열을 작은 따옴표(또는 큰 따옴표)로 감싸고 +로 연결한다.
+- 따옴표가 아닌 백틱(`)으로 전체 문자열과 변수를 묶어 사용할 수 있다. 변수는 ${변수명} 형태로 넣고, 코드상에서 줄바꿈을 하면 개행 문자 없이도 사용할 수 있다.
+- startsWith(), endsWith(), includes()는 ES6에 추가된 String 함수들이다.
+## startsWith()
+- 변수 앞에서부터 일치하는 문자열이 있는지 찾는다.
+- 함수 조건에 부합하면 true, 부합하지 않으면 false를 반환한다.
+
+## endsWith()
+- 변수 뒤에서부터 일치하는 문자열이 있는지 찾는다.
+- 함수 조건에 부합하면 true, 부합하지 않으면 false를 반환한다.
+
+## includes()
+- 위치에 상관없이 변수에 특정 문자열이 포함됐는지 판단한다.
+- 함수 조건에 부합하면 true, 부합하지 않으면 false를 반환한다.
+```javascript
+let LongString = "ES6에 추가된 String 함수들입니다.";
+console.log('startsWith : ' + LongString.startsWith("ES6에 추가"));
+console.log('endsWith : ' + LongString.endsWith("함수들입니다."));
+console.log('includes : ' + LongString.includes("추가된 String"));
+```
 
