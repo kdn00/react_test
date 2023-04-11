@@ -85,4 +85,5 @@ console.log('startsWith : ' + LongString.startsWith("ES6에 추가"));
 console.log('endsWith : ' + LongString.endsWith("함수들입니다."));
 console.log('includes : ' + LongString.includes("추가된 String"));
 ```
+![image](https://user-images.githubusercontent.com/89984853/231040027-13477ddc-cc26-47f7-859d-74bcdc8705cf.png)
 
