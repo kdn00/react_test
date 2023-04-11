@@ -125,6 +125,8 @@ console.log('constName : ' + constName);
 // constName = 'react200'; --> 재할당 에러
 ```
 
+---
+
 # 전개 연산자
 [SpreadOperator.js 파일과 함께 보기](https://github.com/kdn00/react_test/blob/main/src/Components/SpreadOperator.js)
 - 배열이나 객체 변수를 좀 더 직관적이고 편리하게 합치거나 추출할 수 있게 도와주는 문법이다.
@@ -169,6 +171,8 @@ console.log('6. key1 : ' + key1 + ', key3 : ' + key3 + ', others : ' + JSON.stri
 
 - `value(필수)` : JSON문자열로 변환할 값이다.
 - `replacer(선택)` : 함수 또는 배열이 될 수 있다. 이 값이 null이거나 제공되지 않으면, 객체의 모든 속성들이 JSON 문자열 결과에 포함된다.
+
+---
 
 # Class
 [ClassPrototype.js 파일과 함께 보기](https://github.com/kdn00/react_test/blob/main/src/Components/ClassPrototype.js)
@@ -223,3 +227,50 @@ cnt2.showNum();
 - constructor()라는 생성자 함수가 실행되고 파라미터로 전달받은 num2라는 변숫값 (2hundred)을 객체 변수 number2에 저장한다.
 - 객체에 접근할 때 실행할 함수(showNum)는 class의 {} 괄호(scope) 안에 간단하게 선언할 수 있다.
 - 함수가 실행되면, 생성자 함수에서 '2hundred'로 할당된 객체 변수 number2를 사용한다.
+
+---
+
+# 함수
+
+## 화살표 함수
+[ArrowFunction.js 파일과 함께 보기](https://github.com/kdn00/react_test/blob/main/src/Components/ArrowFunction.js)
+- function 대신 => 문자열을 사용하며, return 문자열을 생략할 수도 있다.
+- 따라서 기존 ES5 함수보다 간략하게 선언할 수 있다.
+- 또 화살표 함수에서는 콜백 함수에서 this를 bind해야 하는 문제도 발생하지 않는다.
+   
+- 함수를 function 문자열 대신 =>로 선언
+```javascript
+Function2 = (num1, num2) => {
+  let num3 = num1 + num2;
+  console.log(num3+'. 화살표 함수 : '+this.state.arrowFuc);
+}
+```   
+- 콜백 함수 내부에서는 컴포넌트에 this로 접근할 수 없기 때문에 접근할 수 있는 변수에 this를 백업한다.
+- 백업된 변수인 this_bind를 이용해 컴포넌트의 state 변수에 접근할 수 있다.
+```javascript
+Function3() {
+  var this_bind = this;
+  setTimeout(function() {
+    console.log(this_bind.state.num+'. Es5 콜백 함수 noBind : ');
+    // 콜백 함수 내부에서 this는 window 객체이기 때문에 this로 state 변수에 접근하면 underfinde에러가 발생한다.
+    console.log(this.state.arrowFuc);
+    }, 100);
+}
+```
+- 콜백 함수에 함수 밖의 this를 bind 해주면, this를 컴포넌트로 사용할 수 있다.
+```javascript
+Function4() {
+  setTimeout(function(){
+    console.log('4. Es5 콜백함수 Bind : ' + this.state.arrowFuc);
+    }.bind(this), 100);
+}
+```
+- 화살표 함수에서는 this를 bind해주지 않아도 this를 컴포넌트로 사용해 state 변수에 접근할 수 있다.
+```javascript
+Function5 = (num1, num2, num3) => {
+  const num4 = num1 + num2 + num3;
+  setTimeout(() => {
+    console.log(num4+'. 화살표 콜백 함수 : ' + this.state.arrowFuc);
+    }, 100);
+}
+```

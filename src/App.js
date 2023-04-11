@@ -5,6 +5,7 @@ import ES6 from './Components/ES6';
 import Variable from './Components/Variable';
 import SpreadOperator from './Components/SpreadOperator';
 import ClassPrototype from './Components/ClassPrototype';
+import ArrowFunction from './Components/ArrowFunction';
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
       <ES6 />
       <Variable /> 
       <SpreadOperator />
-      */}
       <ClassPrototype />
+      */}
+      <ArrowFunction />
     </div>
     </>
   );
