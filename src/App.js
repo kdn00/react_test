@@ -30,9 +30,16 @@ function App() {
       <ForEach />
       <Map />
       <Jquery />
-      */}
       <Props props_value = "이건 props입니다. "/>
-      
+      */}
+      <Props 
+        String="react"
+        Number={200}
+        Boolean={1==1}
+        Array={[0, 1, 8]}
+        Object Json={{react: "리액트", twhundred:"200"}}
+        Function={console.log("FunctionProps: function!")}
+      />
     </div>
     </>
   );
